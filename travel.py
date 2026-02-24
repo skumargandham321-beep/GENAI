@@ -5,8 +5,7 @@ import os
 # --- 1. INITIALIZATION & CONFIGURATION ---
 # Replace 'YOUR_API_KEY' with your actual Gemini API Key from Google AI Studio
 # In production, use st.secrets or environment variables
-API_KEY = "AIzaSyCpMhjAt2VlxGOFqSOhaNWS2T5SRY0TZQI" 
-genai.configure(api_key=API_KEY)
+genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
 def generate_itinerary(destination, days, nights):
     """
@@ -80,4 +79,5 @@ def main():
             st.error("Please enter a destination to proceed.")
 
 if __name__ == "__main__":
+
     main()
